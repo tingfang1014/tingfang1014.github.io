@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheng Ting Fang</title>
+<!-- 要來使用bootstrap囉 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Style編輯樣式 -->
+<style>
+/*字型樣式*/
+    .p11{font-family: helvetica;font-size:12pt;color: black;padding-top: 5px,}
+    .divNav{width: 100%;background-color: paleturquoise;}
+    .div1{border-style: solid;border-color: deeppink;border-width: thin; width: 570px;height: 900px; margin: 10px; padding: 20px;}
+    .divPic{background-color: white;}
+    .divP{font-size:10pt;}
+    .img1{width:100%;}
+    .img2{width:100%;height:500px;}
+    .topicH{font-family: broadway;font-size: 20pt;color: grey;}
+    .hPink{color: white;font-family: broadway;font-size: 12pt;}
+/*btn*/
+    .btnPink{font-family:helvetica; color:hotpink;font-size: 15px; background-color: azure; border-style: solid;border-color: hotpink;border-width: thin;border-radius: 5px;padding: 5px;}
+
+
+/*Brand*/
+    .brand{width: 200px;height: 40px; font-size: 16pt;text-align:center;color: white;padding: 6px;background-color: hotpink;font-family: broadway;}
+
+/*footer*/
+    .footer{background-color: gray;color:white;padding: 20px;text-align: center;font-family: helvetica;font-size: 10pt;height: 100px;}
+
+
+/*選單第一層*/
+
+ul { /* 取消ul預設的內縮及樣式 */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul.drop-down-menu {
+        border: #ccc 1px solid;
+        display: inline-block;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    ul.drop-down-menu li {
+        position: relative;
+        border: white 2px dash;
+    }
+
+    ul.drop-down-menu > li:last-child {
+        border-right: none;
+    }
+
+    ul.drop-down-menu > li {
+        float: left; /* 只有第一層是靠左對齊*/
+    }
+
+     ul.drop-down-menu a {
+        background-color: gainsboro;
+        color: black;
+        display: block;
+        padding: 0 50px;
+        text-decoration: none;
+        line-height: 40px;
+        font-size:10pt;
+        font-family: helvetica; 
+
+    }
+    ul.drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
+        background-color: hotpink;
+        color: white;
+    }
+    ul.drop-down-menu li:hover > a { /* 滑鼠移入次選單上層按鈕保持變色*/
+        background-color: hotpink;
+        color: white;
+    }
+
+/*選單第二層*/
+ul.drop-down-menu ul {
+        border: white 1px solid;
+        position: absolute;
+        z-index: 99;
+        right: 0px;
+        top: 100%;
+       min-width: 180px;
+    }
+
+    ul.drop-down-menu ul li {
+        border-bottom: white 1px solid;
+    }
+
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+        z-index: 999;
+        top: 10px;
+        left: 90%;
+    }
+
+/*選單進階設定*/
+ ul.drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+
+    ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+
+/*廣告*/
+    .ad{background-color: hotpink;
+font-size: 20pt;
+color: white;
+font-family: broadway;
+border-radius: 10px;
+padding: 10px;
+border-style: solid;
+border-width: thin;
+  position: fixed;
+  bottom: 50%;
+  right: 0px;
+  width: 110px;
+    height:60px;
+  background-color: hotpink;
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+<!-- 1.放導覽列至頂
+<nav class="navbar-fixed-top nav1">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="divBrand navbar-brand" href="#">Travel With Me!</a>
+        </div>-->
+<ul class="drop-down-menu">
+        <li><div class="brand">ting.fang.
+            </div></li>
+        <li><a href="#">About Me</a>
+            </li>
+        <li><a href="#">Free Google Maps</a>
+            </li>
+        <li><a href="#">Select By Countries</a>
+            <ul>
+                <li><a href="#">Germany</a>
+                </li>
+                <li><a href="#">France</a>
+                </li>
+                <li><a href="#">The Neatherlands</a>
+                </li>
+                <li><a href="#">United Kingdom</a>
+                
+                 <ul>
+                    <li><a href="#">North</a>
+                    </li>
+                    <li><a href="#">Lake District</a>
+                    </li>
+                    <li><a href="#">Southern</a>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+    <li><a href="http://www.facebook.com">Facebook</a></li>
+    <li><a href="http://www.instagram.com">Insatgram</a></li>
+</ul>
+
+
+
+
+<!-- 2.照片往右滑:設定容器 裡面包含了大屏幕 -->
+<div class="container-fluid">
+<div class="divPic jumbotron">       
+
+<div id="slideshow" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner" role="listbox">
+    <div class="item active"><img class="img1" src="1_paris.jpg" alt="1_paris">
+    <div class="carousel-caption"><h class="hPink">Louvre</h></div>
+    </div>
+    <div class="item"><img class="img1" src="2_paris.jpg" alt="2_Paris">
+    <div class="carousel-caption"><h class="hPink">Notre-Dame de Paris in sunset.</h></div>
+    </div>
+    <div class="item"><img class="img1" src="3_paris.jpg" alt="3_Paris">
+    <div class="carousel-caption"><h class="hPink">Le Centre Georges-Pompidou is my favorite Museum. </h></div>
+    </div>
+    <div class="item"><img class="img1" src="4_paris.jpg" alt="4_Paris">
+    <div class="carousel-caption"><h class="hPink">Eiffel Tower </h></div>
+    </div>
+
+    </div>
+
+    <div class="control-btn">
+    <a href="#slideshow" class="left carousel-control" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hiddden="true"></span>        
+    </a>
+    <a href="#slideshow" class="right carousel-control" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hiddden="true"></span>
+    </a>
+    </div>    
+
+
+    
+    <ol class="carousel-indicators">
+    <li data-target="#slideshow" data-slide-to="0"></li>
+    <li data-target="#slideshow" data-slide-to="1"></li>
+    <li data-target="#slideshow" data-slide-to="2"></li>
+
+    </ol>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+<!-- 3.三個區塊的文字 -->
+<div class="container-fluid">
+<div class="jumbotron">
+<div class="row">
+<div class="div1 col-md-4">
+<h class="topicH">Fashion Tips</h>
+<p></p>
+<img class="img2" src="bubble_1.jpg" alt="bubble1">
+<p></p>
+<div class="divP">
+<h class="p11">I hadn’t really intended to write any posts about dressing my pregnancy bump for two reasons – first that the internet is awash with advice, tips and recommendations on maternity attire and second that from the get-go, I had wanted to adjust or change as little as possible with regards to my wardrobe.  There’s no nice way of putting it .  Mainstream maternity wear by and large, sucks.  It can generally be summed up with horizontal stripes, faux kimono wrap constructions and copious amounts of cotton jersey (scroll through #Bumpfie on Instagram and your eyes adjust to that linear striped pattern).  In other words, clothes that I wasn’t prepared to spend actual money on.</h>
+</div>
+<p></p>
+<p><a href="#" class="btnPink btn-primary" >Find out more</a></p>
+
+</div>
+
+
+
+
+<div class="div1 col-md-4">
+    <h class="topicH">Gifts and Accessaries</h>
+<p></p>
+<img class="img2" src="bubble_2.jpg" alt="bubble_2">
+<p></p>
+<h class="p11">I hadn’t really intended to write any posts about dressing my pregnancy bump for two reasons – first that the internet is awash with advice, tips and recommendations on maternity attire and second that from the get-go, I had wanted to adjust or change as little as possible with regards to my wardrobe.  There’s no nice way of putting it .  Mainstream maternity wear by and large, sucks.  It can generally be summed up with horizontal stripes, faux kimono wrap constructions and copious amounts of cotton jersey (scroll through #Bumpfie on Instagram and your eyes adjust to that linear striped pattern).  In other words, clothes that I wasn’t prepared to spend actual money on.</h>
+<p></p>
+<p><a href="#" class="btnPink btn-primary" >Find out more</a></p>
+
+
+</div>      
+<div class="div1 col-md-4">
+    <h class="topicH">Design and Arts</h>
+<p></p>
+<img class="img2" src="bubble_3.jpg" alt="bubble_3">
+<p></p>
+<h class="p11">I hadn’t really intended to write any posts about dressing my pregnancy bump for two reasons – first that the internet is awash with advice, tips and recommendations on maternity attire and second that from the get-go, I had wanted to adjust or change as little as possible with regards to my wardrobe.  There’s no nice way of putting it .  Mainstream maternity wear by and large, sucks.  It can generally be summed up with horizontal stripes, faux kimono wrap constructions and copious amounts of cotton jersey (scroll through #Bumpfie on Instagram and your eyes adjust to that linear striped pattern).  In other words, clothes that I wasn’t prepared to spend actual money on.</h>
+
+<p></p>
+<p><a href="#" class="btnPink btn-primary" >Find out more</a></p>
+
+
+
+</div>  
+</div>   
+</div>
+</div>
+
+<div class="ad";>
+SALE!
+</div>
+
+
+
+<footer class="footer">
+2017 all rights reserved.
+</footer>
+
+</body>
+</html>
